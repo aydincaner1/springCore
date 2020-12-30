@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-@RequestMapping("/pages")
+@RequestMapping("/page")
 public class BookController {
 
     @Autowired
@@ -25,9 +25,17 @@ public class BookController {
 
         List<Books> books = bookService.searchBook(bookContext);
         model.addAttribute("books", books);
-
         return "booklist";
     }
+
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    public String getBooks(Model model) {
+
+        List<Books> books = bookService.getAllBooksList();
+        model.addAttribute("books", books);
+        return "booklist";
+    }
+
 
     @RequestMapping(value = "/add_book", method = RequestMethod.GET)
     public String getBooksSavePage(BookContext bookContext) {

@@ -9,11 +9,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "books")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@EqualsAndHashCode
 public class Books {
 
     @Id
@@ -48,5 +43,69 @@ public class Books {
 
     @OneToMany(mappedBy = "books", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Author> authors;
+
+    public Long getBookno() {
+        return bookno;
+    }
+
+    public void setBookno(Long bookno) {
+        this.bookno = bookno;
+    }
+
+    public String getBookname() {
+        return bookname;
+    }
+
+    public void setBookname(String bookname) {
+        this.bookname = bookname;
+    }
+
+    public String getBooktitle() {
+        return booktitle;
+    }
+
+    public void setBooktitle(String booktitle) {
+        this.booktitle = booktitle;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getBookaciklama() {
+        return bookaciklama;
+    }
+
+    public void setBookaciklama(String bookaciklama) {
+        this.bookaciklama = bookaciklama;
+    }
+
+    public String getBookyear() {
+        return bookyear;
+    }
+
+    public void setBookyear(String bookyear) {
+        this.bookyear = bookyear;
+    }
+
+    public String getBooknote() {
+        return booknote;
+    }
+
+    public void setBooknote(String booknote) {
+        this.booknote = booknote;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
 
 }

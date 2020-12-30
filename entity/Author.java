@@ -10,11 +10,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "authors")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@EqualsAndHashCode
+
 public class Author {
 
     @Id
@@ -31,4 +27,28 @@ public class Author {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author")
     private Books books;
+
+    public Long getAuthorid() {
+        return authorid;
+    }
+
+    public void setAuthorid(Long authorid) {
+        this.authorid = authorid;
+    }
+
+    public String getAuthorname() {
+        return authorname;
+    }
+
+    public void setAuthorname(String authorname) {
+        this.authorname = authorname;
+    }
+
+    public Books getBooks() {
+        return books;
+    }
+
+    public void setBooks(Books books) {
+        this.books = books;
+    }
 }
